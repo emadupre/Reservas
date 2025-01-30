@@ -1,182 +1,254 @@
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BeautyTouch - Estética y Servicios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="/" class="logo">BeautyTouch</a>
-            <ul class="nav-links">
-                <li><a href="#home-section">Inicio</a></li>
-                <li><a href="#services-section">Servicios</a></li>
-                <li><a href="#about-section">Sobre Nosotros</a></li>
-                <li><a href="#contact-section">Contacto</a></li>
-            </ul>
-            <div class="nav-right">
-                <a href="/login" class="btn-login" aria-label="Iniciar Sesión">
-                    <i class="fas fa-user"></i>
-                </a>
-            </div>
-        </div>
+      <div class="navbar-container">
+        <a href="/" class="logo">BeautyTouch</a>
+
+        <!-- Botón del menú hamburguesa -->
+        <button class="hamburger" aria-label="Abrir menú">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="#home-section">Inicio</a></li>
+          <li><a href="#services-section">Servicios</a></li>
+          <li><a href="#about-section">Sobre Nosotros</a></li>
+          <li><a href="#contact-section">Contacto</a></li>
+          <li class="nav-right">
+            <a href="/login" class="btn-login" aria-label="Iniciar Sesión">
+                <i class="fas fa-user"></i>
+              </a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-        <section id="home-section" class="hero">
-            <video autoplay muted loop>
-                <source src="src/video/manicure-nails.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-            <div class="hero-content">
-                <h1>BeautyTouch</h1>
-                <p>Descubre tu belleza, transforma tu confianza</p>
-                <div class="hero-cta">
-                    <a href="#services-section" class="btn btn-primary">Ver Servicios</a>
-                    <a href="#contact-section" class="btn btn-secondary">Contactanos</a>
-                </div>
-            </div>
-        </section>
+      <section id="home-section" class="hero">
+        <video autoplay muted loop>
+          <source src="src/video/manicure-nails.mp4" type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="hero-content">
+          <h1>BeautyTouch</h1>
+          <p>Descubre tu belleza, transforma tu confianza</p>
+          <div class="hero-cta">
+            <a href="#services-section" class="btn btn-primary"
+              >Ver Servicios</a
+            >
+            <a href="#contact-section" class="btn btn-secondary">Contactanos</a>
+          </div>
+        </div>
+      </section>
 
-        <section id="about-section" class="container about-section">
-            <header>
-                <h2>Sobre Nosotros</h2>
-            </header>
-            <div class="about-content">
-                <p>En BeautyTouch, nos dedicamos a ofrecer servicios de estética de alta calidad para realzar tu belleza natural. Nuestro equipo de profesionales está comprometido con brindar una experiencia excepcional y personalizada para cada cliente.</p>
-                <p>Nuestra misión es transformar la belleza y elevar la confianza de cada persona que nos visita. Utilizamos productos de primera calidad y técnicas innovadoras para asegurar resultados impresionantes y duraderos.</p>
-            </div>
-        </section>
+      <section id="about-section" class="container about-section">
+        <header>
+          <h2>Sobre Nosotros</h2>
+        </header>
+        <div class="about-content">
+          <p>
+            En BeautyTouch, nos dedicamos a ofrecer servicios de estética de
+            alta calidad para realzar tu belleza natural. Nuestro equipo de
+            profesionales está comprometido con brindar una experiencia
+            excepcional y personalizada para cada cliente.
+          </p>
+          <p>
+            Nuestra misión es transformar la belleza y elevar la confianza de
+            cada persona que nos visita. Utilizamos productos de primera calidad
+            y técnicas innovadoras para asegurar resultados impresionantes y
+            duraderos.
+          </p>
+        </div>
+      </section>
 
-        <section id="services-section" class="container servicios-section">
-            <header>
-                <h2>Nuestros Servicios</h2>
-                <p>Elige tu servicio preferido y reserva tu turno</p>
-            </header>
-            
-            <div class="servicios-categorias">
-                <button class="categoria-btn active" data-categoria="todas">Todos</button>
-                <button class="categoria-btn" data-categoria="uñas">Uñas</button>
-                <button class="categoria-btn" data-categoria="depilacion">Depilación</button>
-            </div>
-            
-            <div class="servicios-grid" id="serviciosGrid"></div>
-            
-            <div id="formularioReserva" class="formulario-reserva hidden">
-                <div class="reserva-header">
-                    <h2 id="tituloServicio"></h2>
-                    <button id="cancelarReserva" class="btn-close" aria-label="Cerrar">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <form id="reservaForm">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Número de Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="Tu número de contacto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="horario">Fecha y Hora</label>
-                        <input type="datetime-local" id="horario" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="metodoPago">Método de Pago</label>
-                        <select id="metodoPago" required>
-                            <option value="">Seleccionar Método de Pago</option>
-                            <option value="efectivo">Efectivo</option>
-                            <option value="transferencia">Transferencia</option>
-                            <option value="mercadopago">Mercado Pago</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="notas">Notas adicionales</label>
-                        <textarea id="notas" placeholder="Información adicional (opcional)"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Confirmar Reserva</button>
-                </form>
-            </div>
-        </section>
+      <section id="services-section" class="container servicios-section">
+        <header>
+          <h2>Nuestros Servicios</h2>
+          <p>Elige tu servicio preferido y reserva tu turno</p>
+        </header>
 
-        <section id="contact-section" class="container contact-section">
-            <header>
-                <h2>Contactanos</h2>
-                <p>¿Tienes un servicio especial o una consulta? Déjanos tus datos</p>
-            </header>
-            
-            <div class="contact-form-container">
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="contactNombre">Nombre Completo</label>
-                        <input type="text" id="contactNombre" placeholder="Ingresa tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactTelefono">Número de Teléfono</label>
-                        <input type="tel" id="contactTelefono" placeholder="Tu número de contacto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Correo Electrónico</label>
-                        <input type="email" id="contactEmail" placeholder="Tu correo electrónico" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactServicio">Tipo de Servicio</label>
-                        <select id="contactServicio" required>
-                            <option value="">Selecciona un servicio</option>
-                            <option value="unas">Servicios de Uñas</option>
-                            <option value="depilacion">Servicios de Depilación</option>
-                            <option value="otro">Otro Servicio</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMensaje">Detalles de tu Solicitud</label>
-                        <textarea id="contactMensaje" placeholder="Cuéntanos más sobre tu servicio o consulta especial" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar Consulta</button>
-                </form>
+        <div class="servicios-categorias">
+          <button class="categoria-btn active" data-categoria="todas">
+            Todos
+          </button>
+          <button class="categoria-btn" data-categoria="uñas">Uñas</button>
+          <button class="categoria-btn" data-categoria="depilacion">
+            Depilación
+          </button>
+        </div>
+
+        <div class="servicios-grid" id="serviciosGrid"></div>
+
+        <div id="formularioReserva" class="formulario-reserva hidden">
+          <div class="reserva-header">
+            <h2 id="tituloServicio"></h2>
+            <button id="cancelarReserva" class="btn-close" aria-label="Cerrar">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form id="reservaForm">
+            <div class="form-group">
+              <label for="nombre">Nombre Completo</label>
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Ingresa tu nombre"
+                required
+              />
             </div>
-        </section>
+            <div class="form-group">
+              <label for="telefono">Número de Teléfono</label>
+              <input
+                type="tel"
+                id="telefono"
+                placeholder="Tu número de contacto"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="horario">Fecha y Hora</label>
+              <input type="datetime-local" id="horario" required />
+            </div>
+            <div class="form-group">
+              <label for="metodoPago">Método de Pago</label>
+              <select id="metodoPago" required>
+                <option value="">Seleccionar Método de Pago</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="transferencia">Transferencia</option>
+                <option value="mercadopago">Mercado Pago</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notas">Notas adicionales</label>
+              <textarea
+                id="notas"
+                placeholder="Información adicional (opcional)"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Confirmar Reserva</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="contact-section" class="container contact-section">
+        <header>
+          <h2>Contactanos</h2>
+          <p>¿Tienes un servicio especial o una consulta? Déjanos tus datos</p>
+        </header>
+
+        <div class="contact-form-container">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="contactNombre">Nombre Completo</label>
+              <input
+                type="text"
+                id="contactNombre"
+                placeholder="Ingresa tu nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contactTelefono">Número de Teléfono</label>
+              <input
+                type="tel"
+                id="contactTelefono"
+                placeholder="Tu número de contacto"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Correo Electrónico</label>
+              <input
+                type="email"
+                id="contactEmail"
+                placeholder="Tu correo electrónico"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contactServicio">Tipo de Servicio</label>
+              <select id="contactServicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="unas">Servicios de Uñas</option>
+                <option value="depilacion">Servicios de Depilación</option>
+                <option value="otro">Otro Servicio</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMensaje">Detalles de tu Solicitud</label>
+              <textarea
+                id="contactMensaje"
+                placeholder="Cuéntanos más sobre tu servicio o consulta especial"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Consulta</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>BeautyTouch</h3>
-                <p>Transformando belleza, elevando confianza</p>
-            </div>
-            <div class="footer-column">
-                <h4>Servicios</h4>
-                <ul>
-                    <li>Uñas</li>
-                    <li>Depilación</li>
-                    <li>Tratamientos Faciales</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <p><i class="fas fa-phone"></i> +54 123 456 7890</p>
-                <p><i class="fas fa-envelope"></i> contacto@beautytouch.com</p>
-            </div>
-            <div class="footer-column">
-                <h4>Redes Sociales</h4>
-                <div class="social-icons">
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>BeautyTouch</h3>
+          <p>Transformando belleza, elevando confianza</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Digitaliza-T. Todos los derechos reservados.</p>
+        <div class="footer-column">
+          <h4>Servicios</h4>
+          <ul>
+            <li>Uñas</li>
+            <li>Depilación</li>
+            <li>Tratamientos Faciales</li>
+          </ul>
         </div>
+        <div class="footer-column">
+          <h4>Contacto</h4>
+          <p><i class="fas fa-phone"></i> +54 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> contacto@beautytouch.com</p>
+        </div>
+        <div class="footer-column">
+          <h4>Redes Sociales</h4>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://whatsapp.com" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Digitaliza-T. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

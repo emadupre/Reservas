@@ -20,6 +20,10 @@ body {
     line-height: 1.6;
 }
 
+
+
+
+
 .navbar {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -66,7 +70,7 @@ body {
 .nav-links.active {
     display: block;
     position: absolute;
-    top: 60px;
+    top: 77px;
     left: 0;
     width: 100%;
     background-color: var(--white);
@@ -134,7 +138,6 @@ body {
 }
 
 .nav-right {
-    position: absolute;
     right: 20px;
     display: flex;
     align-items: center;
@@ -562,6 +565,37 @@ header p {
     transform: translateY(0);
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 5px);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -5px);
+}
+
 @media (max-width: 600px) {
     .formulario-reserva {
         width: 95%;
@@ -577,8 +611,35 @@ header p {
 
 @media (max-width: 768px) {
     .navbar-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
         flex-direction: column;
         align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.8);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .nav-right {
+        position: static;
+        justify-content: center;
     }
 
     .logo {
@@ -600,7 +661,6 @@ header p {
 
     .nav-right {
         position: static;
-        margin-top: 10px;
         justify-content: center;
         gap: 10px;
     }
